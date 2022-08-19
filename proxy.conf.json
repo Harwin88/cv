@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+        "target": "https://sistema-plan-desarrollo.lndo.site",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}
