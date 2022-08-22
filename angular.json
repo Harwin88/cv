@@ -78,6 +78,8 @@
               "browserTarget": "angular-cv-angular:build:production"
             },
             "development": {
+              "sslKey": "localhost-key.pem",
+              "sslCert": "localhost.pem",
               "browserTarget": "angular-cv-angular:build:development"
             }
           },

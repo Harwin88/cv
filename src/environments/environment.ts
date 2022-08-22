@@ -2,9 +2,29 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
-};
+
+
+let clientid = "882e3a05-3045-4208-b671-cbb9c1f3bd81";
+let secret = "882e3a05-3045-4208-b671-cbb9c1f3bd81";
+let issuer = "https://myidpportal.com/idp/myapp/";
+let logoutUrl = "https://sistema-plan-desarrollo.lndo.site?clicnt_id=882e3a05-3045-4208-b671-cbb9c1f3bd81";
+ 
+export const environment = {​​​​
+    production: false,
+    'app':{
+    client_id: "882e3a05-3045-4208-b671-cbb9c1f3bd81",
+    issuer: issuer,
+    redirectUri: "https://localhost:4200/",
+    production: false,
+    url_api: "https://sistema-plan-desarrollo.lndo.site/oauth/token",
+    scope: "openid profile email",
+    responseType: "code",
+    showDebugInformation: true,
+    dummyClientSecret: secret,
+    logoutUrl: logoutUrl+clientid,
+    skipIssuerCheck:true
+  }
+}​​​​;
 
 /*
  * For easier debugging in development mode, you can import the following file

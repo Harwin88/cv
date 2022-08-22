@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
-import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -31,7 +30,8 @@ export class LoginComponent implements OnInit {
   }
   onSubmit(): void {
     const { username, password } = this.form;
-    this.authService.login(username, password).subscribe({
+    this.authService.login(username, password)
+    .subscribe({
       next: data => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
@@ -41,8 +41,9 @@ export class LoginComponent implements OnInit {
         this.reloadPage();
       },
       error: err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
+        console.log('error:::::', err);
+       this.errorMessage = err.error.message;
+       this.isLoginFailed = true;
       }
     });
   }
